@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"/>
+
+    <style type="text/css">
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 100px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+
+    .masthead div.text.container {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .masthead h1.ui.header {
+      margin-top: 0em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    .ui.secondary.pointing.menu .item {
+        border-bottom: 2px solid rgba(255,255,255,.15);
+        color: rgba(255, 255, 255, 0.95);
+    }
+
+    .ui.secondary.pointing.menu .active.item {
+        border-color: #ffffff;
+        color: rgba(255, 255, 255, 0.95);
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+    </style>
+</head>
+<body class="pushable">
+
+        <!-- Following Menu -->
+        <div class="ui large top fixed menu transition hidden">
+          <div class="ui container">
+            <a class="active item">Home</a>
+            <a class="item">Work</a>
+            <a class="item">Company</a>
+            <a class="item">Careers</a>
+            <div class="right menu">
+              <div class="item">
+                <a class="ui button">Log in</a>
+              </div>
+              <div class="item">
+                <a class="ui primary button">Sign Up</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sidebar Menu -->
+        <div class="ui vertical inverted sidebar menu left">
+          <a class="active item">Home</a>
+          <a class="item">Work</a>
+          <a class="item">Company</a>
+          <a class="item">Careers</a>
+          <a class="item">Login</a>
+          <a class="item">Signup</a>
+        </div>
+        
+        
+        <!-- Page Contents -->
+        <div class="pusher">
+          <div class="ui olive inverted vertical masthead center aligned segment">
+        
+            <div class="ui container">
+              <div class="ui large secondary pointing menu">
+                <a class="toc item">
+                  <i class="sidebar icon"></i>
+                </a>
+                <a class="active item" href="">Home</a>
+                <a class="item" target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLSc5L9g3BFqT5KHHZ9yPb68oAQVId1HOtav0kpNpkVqlhZuvgg/viewform?usp=sf_link">Registration</a>
+                <!-- <a class="item">Company</a>
+                <a class="item">Careers</a>
+                <div class="right item">
+                  <a class="ui inverted button">Log in</a>
+                  <a class="ui inverted button">Sign Up</a>
+                </div> -->
+              </div>
+            </div>
+        
+            <div class="ui text container">
+              <h1 class="ui inverted header">
+                New Comers
+              </h1>
+              <h2>Dream Big & Train Hard</h2>
+              <a class="ui huge primary button" target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLSc5L9g3BFqT5KHHZ9yPb68oAQVId1HOtav0kpNpkVqlhZuvgg/viewform?usp=sf_link">Get Started <i class="right arrow icon"></i></a>
+            </div>
+        
+          </div>
+        
+          <div class="ui vertical stripe segment">
+            <div class="ui middle aligned stackable grid container">
+              <div class="row"><div class="sixteen wide column"><h3 class="ui header center aligned">Top Trainees</h3></div></div>
+              <div class="row">
+                <div id="top" class="three wide column">
+                  <script id="top-template" type="text/x-handlebars-template"> 
+                  {{#unless (isHeader cells)}} 
+                  <div class="ui fluid card">
+                    <div class="image">
+                      <img src="artist.avatar.png" style="height: 195.844px">
+                    </div>
+                    <div class="content">
+                      <a class="header" style="white-space: nowrap; overflow: hidden">{{cells.Name}}</a>
+                      <div class="meta">
+                        <a>Top New Comer</a>
+                      </div>
+                    </div>
+                  </div>
+                  {{/unless}}
+                  </script>
+                </div>
+                <div class="thirteen wide column">
+                    <table id="hr" class="ui compact celled definition center aligned table">
+                        <thead class="full-width">
+                            <tr id="header-row">
+                            <script id="header-row-script" type="text/x-handlebars-template">
+                            {{#each columns}}
+                              <th>{{this}}</th>
+                            {{/each}}
+                            </script>                             
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <script id="hr-template" type="text/x-handlebars-template">
+                            {{#unless (isHeader cells)}}                     
+                            <tr>
+                              <td class="left aligned">
+                                <img class="ui spaced avatar image"
+                                      src="{{#if cells.Profile_Picture}}
+                                             {{cells.Profile_Picture}}
+                                           {{else}}
+                                             artist.avatar.png
+                                           {{/if}}">
+                                      {{cells.Name}}
+                                </td>
+                              <td>{{cells.Score}}</td>
+                              {{#each (problemCell cells)}}
+                                {{#if (accepted this)}}
+                                  <td style="color: white;background-color: green">AC</td>
+                                {{else}}
+                                  <td></td>
+                                {{/if}}
+                              {{/each}}
+                            </tr>
+                            {{/unless}}
+                        </script>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+          <div class="ui vertical stripe quote inverted grey segment">
+            <div class="ui stackable internally celled grid">
+              <div class="center aligned row">
+                <div class="six wide column">
+                  <h3>Prerequisites</h3>
+                  <div class="ui huge list">
+                    <div class="item">Variables</div>
+                    <div class="item">Input/Output</div>
+                    <div class="item">Conditions</div>
+                    <div class="item">Loops</div>
+                    <div class="item">Arrays</div>
+                    <div class="item">Functions</div>
+                  </div>
+                </div>
+                <div class="ten wide column">
+                  <h3>Problem-set</h3>
+                  <div class="ui vertical inverted grey segment">
+                    <div class="ui equal width grid">
+                      <div class="column">
+                          <ol class="ui huge list">
+                            <li value="A">- Watermelon</li>
+                            <li value="B">- Theatre Square</li>
+                            <li value="C">- Way Too Long Words</li>
+                          </ol>
+                      </div>
+                      <div class="column">
+                        <ol class="ui huge list">
+                          <li value="D">- Next Round</li>
+                          <li value="E">- String Task</li>
+                          <li value="F">- Domino piling</li>
+                          <li value="G">- Football</li>
+                        </ol>
+                      </div>
+                      <div class="column">
+                        <ol class="ui huge list">
+                          <li value="H">- Petya and Strings</li>
+                          <li value="I">- Stones on the Table</li>
+                          <li value="J">- Word Capitalization</li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ui vertical stripe segment">
+            <div class="ui text container">
+              <h3 class="ui center aligned header">Videos To Watch</h3>
+              <div class="ui grid">
+              <div class="row">
+                <div class="sixteen wide column">
+                  <div class="ui embed"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="four wide column">
+                  <a href="" class="ui medium image"
+                     onclick="return runVideo('https://www.youtube.com/embed/TngPtAFRcbE','video1.jpg')">
+                    <img src="video1.jpg">
+                    <div class="ui dimmer">
+                      <div class="content">
+                        <h2 class="ui inverted header">
+                          1
+                        </h2>
+                        ACM ICPC, ACPC and ECPC
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="four wide column">
+                  <a href="" class="ui medium image"
+                     onclick="return runVideo('https://www.youtube.com/embed/YcRMNzLTIfg','video2.jpg')">
+                    <img src="video2.jpg">
+                    <div class="ui dimmer">
+                      <div class="content">
+                        <h2 class="ui inverted header">
+                          2
+                        </h2>
+                        Programming Competitions (What? and Why?)
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="four wide column">
+                  <a href="" class="ui medium image"
+                      onclick="return runVideo('https://www.youtube.com/embed/VDKDU5A2AIM','video3.jpg')">
+                    <img src="video3.jpg">
+                    <div class="ui dimmer">
+                      <div class="content">
+                        <h2 class="ui inverted header">
+                          3
+                        </h2>
+                        Online Judges
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="four wide column">
+                  <a href="" class="ui medium image"
+                      onclick="return runVideo('https://www.youtube.com/embed/7y6jB16zVl8','video4.jpg')">
+                    <img src="video4.jpg">
+                    <div class="ui dimmer">
+                      <div class="content">
+                        <h2 class="ui inverted header">
+                          4
+                        </h2>
+                        Codeforces
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              </div>
+              <!-- <h4 class="ui horizontal header divider">
+                <a href="#">Case Studies</a>
+              </h4> -->
+              <!-- <div class="teams" data-slick='{"slidesToShow": 1, "slidesToScroll": 3}'>
+                <div><img src="team1.jpg"></div>
+                <div><img src="team2.jpg"></div>
+                <div><img src="team3.jpg"></div>
+              </div>
+              <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
+              <p>Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
+              <a class="ui large button">I'm Still Quite Interested</a> -->
+            </div>
+          </div>
+        
+          <div class="ui grey inverted vertical center aligned segment">
+            <div class="ui container" style="padding-top: 40px;padding-bottom: 40px">
+              <div class="row">
+                <h1 class="ui center aligned inverted header" style="padding-bottom: 30px">Participated Teams From FCIH</h3>
+              </div>
+              <div class="row">
+              <div class="fourteen wide column">
+                <div class="teams" data-slick='{"slidesToShow": 2, "slidesToScroll": 6}'>
+                  <div><img src="team1.jpg" width="500"></div>
+                  <div><img src="team2.jpg" width="500"></div>
+                  <div><img src="team3.jpg" width="500"></div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="ui inverted vertical footer segment">
+            <div class="ui container">
+              <div class="ui stackable inverted divided equal height stackable grid">
+                <div class="three wide column">
+                  <h4 class="ui inverted header">Useful Links</h4>
+                  <div class="ui inverted link list">
+                    <a href="https://www.facebook.com/groups/471661576286677/" class="item">Facebook Group</a>
+                    <a href="https://docs.google.com/spreadsheets/d/16cDoZWfC9Vck6hhVb8OG7Xu54xkoanJRWCjHUlS4HiM" class="item">Training Sheet</a>
+                    <a href="https://icpc.baylor.edu/" class="item">ACM ICPC Site</a>
+                  </div>
+                </div>
+                <!-- <div class="three wide column">
+                  <h4 class="ui inverted header">Services</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item">Banana Pre-Order</a>
+                    <a href="#" class="item">DNA FAQ</a>
+                    <a href="#" class="item">How To Access</a>
+                    <a href="#" class="item">Favorite X-Men</a>
+                  </div>
+                </div>
+                <div class="seven wide column">
+                  <h4 class="ui inverted header">Footer Header</h4>
+                  <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        
+        </body>
+  <!-- import JavaScript -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript">
+    
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+      first();
+
+      $('.ui.medium.image')
+        .dimmer({
+          on: 'hover'
+        });
+
+      $('.teams').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+
+    });
+
+  function runVideo(video,pic) {
+    $('.ui.embed').embed({
+      url: video,
+      placeholder : pic
+    });
+
+    return false;
+  }
+
+  function first() {
+    runVideo('https://www.youtube.com/embed/TngPtAFRcbE','video1.jpg');
+
+    return false;
+  }
+
+  var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/16cDoZWfC9Vck6hhVb8OG7Xu54xkoanJRWCjHUlS4HiM/edit#gid=513835448';
+
+  var columns = ['Name','Score','D','E','F','G','H','I','J','K','L','M','Profile_Picture'];
+  var columnsNames = ['Name','Score','A','B','C','D','E','F','G','H','I','J'];
+
+  var template = Handlebars.compile(document.getElementById("header-row-script").innerHTML)
+  var context = {columns: columnsNames};
+  var html = template(context);
+  document.getElementById("header-row").innerHTML = html;
+  
+  Handlebars.registerHelper('isHeader', function(cells) {
+      return cells.Name == 'Name' || cells.Name == 'ACM ICPC';
+  });
+  
+  Handlebars.registerHelper('accepted', function(text) {
+    return text == 'AC';
+  });
+
+  Handlebars.registerHelper('problemCell', function(cells) {
+    delete cells['Name'];
+    delete cells['Score'];
+    delete cells['Profile_Picture'];
+    return cells;
+  });
+
+  Handlebars.registerHelper('columns', function() {
+    return columns;
+  });
+
+  var HRTemplate = Handlebars.compile($('#hr-template').html());
+  var TopTemplate = Handlebars.compile($('#top-template').html());
+
+  $('#hr').sheetrock({
+    url: mySpreadsheet,
+    query: "select A,C,D,E,F,G,H,I,J,K,L,M,N order by C desc",
+    fetchSize: 7,
+    labels: columns,
+    rowTemplate: HRTemplate,
+    callback: draw
+  });
+
+  $('#top').sheetrock({
+    url: mySpreadsheet,
+    query: "select A,C,D,E,F,G,H,I,J,K,L,M,N order by C desc",
+    fetchSize: 2,
+    labels: columns,
+    rowTemplate: TopTemplate,
+    callback: draw
+  });
+
+  function draw(error, options, response) {
+      if (error) {
+          console.log('fail');
+      }
+      else{
+          // console.log(response);
+      }
+  }
+  </script>
+</html>
