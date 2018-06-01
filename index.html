@@ -181,7 +181,12 @@
                   {{#unless (isHeader cells)}} 
                   <div class="ui fluid card">
                     <div class="image">
-                      <img src="artist.avatar.png" style="height: 195.844px">
+                      <img src="{{#if cells.Profile_Picture}}
+                                  {{cells.Profile_Picture}}
+                                {{else}}
+                                  artist.avatar.png
+                                {{/if}}"
+                    style="height: 195.844px">
                     </div>
                     <div class="content">
                       <a class="header" style="white-space: nowrap; overflow: hidden">{{cells.Name}}</a>
