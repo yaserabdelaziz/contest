@@ -529,7 +529,7 @@
   $('#hr').sheetrock({
     url: mySpreadsheet,
     query: "select A,C,D,E,F,G,H,I,J,K,L,M,N order by C desc",
-    fetchSize: 7,
+    fetchSize: 6,
     labels: columns,
     rowTemplate: HRTemplate,
     callback: draw
@@ -538,7 +538,7 @@
   $('#top').sheetrock({
     url: mySpreadsheet,
     query: "select A,C,D,E,F,G,H,I,J,K,L,M,N order by C desc",
-    fetchSize: 2,
+    fetchSize: 1,
     labels: columns,
     rowTemplate: TopTemplate,
     callback: draw
