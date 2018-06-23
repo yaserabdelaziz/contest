@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <!-- import CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"/>
-
     <style type="text/css">
     .hidden.menu {
       display: none;
@@ -116,8 +113,8 @@
         <!-- Following Menu -->
         <div class="ui large top fixed menu transition hidden">
           <div class="ui container">
-            <a class="active item" href="index.html">New Comers</a>
-            <a class="item" href="phase-1.html">Phase I</a>
+            <a class="item" href="index.html">New Comers</a>
+            <a class="active item" href="phase-1.html">Phase I</a>
             <a class="item" target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLSc5L9g3BFqT5KHHZ9yPb68oAQVId1HOtav0kpNpkVqlhZuvgg/viewform?usp=sf_link">Registration</a>
             <!-- <a class="item">Company</a>
             <a class="item">Careers</a>
@@ -134,8 +131,8 @@
         
         <!-- Sidebar Menu -->
         <div class="ui vertical inverted sidebar menu left">
-          <a class="active item" href="index.html">New Comers</a>
-          <a class="item" href="phase-1.html">Phase I</a>
+          <a class="item" href="index.html">New Comers</a>
+          <a class="active item" href="phase-1.html">Phase I</a>
           <a class="item" target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLSc5L9g3BFqT5KHHZ9yPb68oAQVId1HOtav0kpNpkVqlhZuvgg/viewform?usp=sf_link">Registration</a>
           <!-- <a class="item">Company</a>
           <a class="item">Careers</a>
@@ -146,15 +143,15 @@
         
         <!-- Page Contents -->
         <div class="pusher">
-          <div class="ui olive inverted vertical masthead center aligned segment">
+          <div class="ui green inverted vertical masthead center aligned segment">
         
             <div class="ui container">
               <div class="ui large secondary pointing menu">
                 <a class="toc item">
                   <i class="sidebar icon"></i>
                 </a>
-                <a class="active item" href="index.html">New Comers</a>
-                <a class="item" href="phase-1.html">Phase I</a>
+                <a class="item" href="index.html">New Comers</a>
+                <a class="active item" href="phase-1.html">Phase I</a>
                 <a class="item" target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLSc5L9g3BFqT5KHHZ9yPb68oAQVId1HOtav0kpNpkVqlhZuvgg/viewform?usp=sf_link">Registration</a>
                 <!-- <a class="item">Company</a>
                 <a class="item">Careers</a>
@@ -167,7 +164,7 @@
         
             <div class="ui text container">
               <h1 class="ui inverted header">
-                New Comers
+                Phase I
               </h1>
               <h2>Dream Big & Train Hard</h2>
               <a class="ui huge primary button" target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLSc5L9g3BFqT5KHHZ9yPb68oAQVId1HOtav0kpNpkVqlhZuvgg/viewform?usp=sf_link">Get Started <i class="right arrow icon"></i></a>
@@ -201,7 +198,8 @@
                   {{/unless}}
                   </script>
                 </div>
-                <div class="thirteen wide column">
+                <div class="thirteen wide column ui grid">
+                    <div class="sixteen wide column">
                     <table id="hr" class="ui compact celled definition center aligned table">
                         <thead class="full-width">
                             <tr id="header-row">
@@ -227,6 +225,30 @@
                                 </td>
                               <td>{{cells.Score}}</td>
                               {{#each (problemCell cells)}}
+                              <td style="color: black;background-color: {{numberedBackgroundColor this}}">{{this}}</td>
+                              {{/each}}
+                            </tr>
+                            {{/unless}}
+                        </script>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div class="sixteen wide column">
+                    <table id="hr2" class="ui compact celled definition center aligned table">
+                        <thead class="full-width">
+                            <tr id="header-row2">
+                            <script id="header-row-script2" type="text/x-handlebars-template">
+                            {{#each columns}}
+                              <th>{{this}}</th>
+                            {{/each}}
+                            </script>                             
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <script id="hr-template2" type="text/x-handlebars-template">
+                            {{#unless (isHeader cells)}}                     
+                            <tr>
+                              {{#each (problemCell cells)}}
                                 {{#if (accepted this)}}
                                   <td style="color: white;background-color: green">AC</td>
                                 {{else}}
@@ -238,6 +260,7 @@
                         </script>
                         </tbody>
                     </table>
+                    </div>
                 </div>
               </div>
             </div>
@@ -247,7 +270,7 @@
           <div class="ui vertical stripe quote inverted grey segment">
             <div class="ui stackable internally celled grid">
               <div class="center aligned row">
-                <div class="six wide column">
+                <!-- <div class="six wide column">
                   <h3>Prerequisites</h3>
                   <div class="ui huge list">
                     <div class="item">Variables</div>
@@ -257,32 +280,70 @@
                     <div class="item">Arrays</div>
                     <div class="item">Functions</div>
                   </div>
-                </div>
-                <div class="ten wide column">
+                </div> -->
+                <div class="sixteen wide column">
                   <h3>Problem-set</h3>
                   <div class="ui vertical inverted grey segment">
                     <div class="ui equal width grid">
                       <div class="column">
                           <ol class="ui huge list">
-                            <li value="A">- Watermelon</li>
-                            <li value="B">- Theatre Square</li>
-                            <li value="C">- Way Too Long Words</li>
+                            <li value="A">- Great Fairy War</li>
+                            <li value="B">- Check Function</li>
+                            <li value="C">- Diagonal Disproportion</li>
+                            <li value="D">- White Cells</li>
+                            <li value="E">- Taxi</li>
+                            <li value="F">- Inside Out</li>
+                            <li value="G">- Grid Generator</li>
+                            <li value="H">- Rose Petals</li>
                           </ol>
                       </div>
                       <div class="column">
-                        <ol class="ui huge list">
-                          <li value="D">- Next Round</li>
-                          <li value="E">- String Task</li>
-                          <li value="F">- Domino piling</li>
-                          <li value="G">- Football</li>
-                        </ol>
+                          <ol class="ui huge list">
+                            <li value="I">- Letter Strings</li>
+                            <li value="J">- Account Balance</li>
+                            <li value="K">- The Square Div Two</li>
+                            <li value="L">- Soccer Leagues</li>
+                            <li value="M">- Array Hash</li>
+                            <li value="N">- The Beauty</li>
+                            <li value="O">- The Black Jack Div Two</li>
+                            <li value="P">- Tram</li>
+                          </ol>
                       </div>
                       <div class="column">
-                        <ol class="ui huge list">
-                          <li value="H">- Petya and Strings</li>
-                          <li value="I">- Stones on the Table</li>
-                          <li value="J">- Word Capitalization</li>
-                        </ol>
+                          <ol class="ui huge list">
+                            <li value="Q">- cAPS lOCK</li>
+                            <li value="R">- Domino piling</li>
+                            <li value="S">- Insomnia cure</li>
+                            <li value="T">- Petya and Strings</li>
+                            <li value="U">- HQ9+</li>
+                            <li value="V">- Twins</li>
+                            <li value="W">- Arrival of the General</li>
+                            <li value="X">- Presents</li>
+                          </ol>
+                      </div>
+                      <div class="column">
+                          <ol class="ui huge list">
+                            <li value="Y">- Football</li>
+                            <li value="Z">- Nearly Lucky Number</li>
+                            <li value="AA">&nbsp&nbsp - Lucky Division</li>
+                            <li value="AB">&nbsp&nbsp - Towers</li>
+                            <li value="AC">&nbsp&nbsp - Marks</li>
+                            <li value="AD">&nbsp&nbsp&nbsp - Lucky Ticket</li>
+                            <li value="AE">&nbsp&nbsp - Postcards and photos</li>
+                            <li value="AF">&nbsp&nbsp - IQ test</li>
+                          </ol>
+                      </div>
+                      <div class="column">
+                          <ol class="ui huge list">
+                            <li value="AG">&nbsp&nbsp&nbsp - Robot Bicorn Attack</li>
+                            <li value="AH">&nbsp&nbsp&nbsp - Lucky Sum of Digits</li>
+                            <li value="AI">&nbsp - Lucky Conversion</li>
+                            <li value="AJ">&nbsp&nbsp - Chord</li>
+                            <li value="AK">&nbsp&nbsp - Letter</li>
+                            <li value="AM">&nbsp&nbsp&nbsp&nbsp - Flag</li>
+                            <li value="AN">&nbsp&nbsp&nbsp - Life Without Zeros</li>
+                            <li value="AO">&nbsp&nbsp&nbsp - Dividing Orange</li>
+                          </ol>
                       </div>
                     </div>
                   </div>
@@ -303,87 +364,89 @@
               <div class="row">
                 <div class="four wide column">
                   <a href="" class="ui medium image"
-                     onclick="return runVideo('https://www.youtube.com/embed/TngPtAFRcbE','video1.jpg')">
-                    <img src="video1.jpg">
+                     onclick="return runVideo('https://www.youtube.com/embed/DL2osIDogXY','video11.jpg')">
+                    <img src="video11.jpg">
                     <div class="ui dimmer">
                       <div class="content">
                         <h2 class="ui inverted header">
                           1
                         </h2>
-                        ACM ICPC, ACPC and ECPC
+                        Topcoder 1
                       </div>
                     </div>
                   </a>
                 </div>
                 <div class="four wide column">
                   <a href="" class="ui medium image"
-                     onclick="return runVideo('https://www.youtube.com/embed/YcRMNzLTIfg','video2.jpg')">
-                    <img src="video2.jpg">
+                     onclick="return runVideo('https://www.youtube.com/embed/-ScjN5QtuPo','video12.jpg')">
+                    <img src="video12.jpg">
                     <div class="ui dimmer">
                       <div class="content">
                         <h2 class="ui inverted header">
                           2
                         </h2>
-                        Programming Competitions (What? and Why?)
+                        Topcoder 2
                       </div>
                     </div>
                   </a>
                 </div>
                 <div class="four wide column">
                   <a href="" class="ui medium image"
-                      onclick="return runVideo('https://www.youtube.com/embed/VDKDU5A2AIM','video3.jpg')">
-                    <img src="video3.jpg">
+                      onclick="return runVideo('https://www.youtube.com/embed/KAS83uXf_8s','video13.jpg')">
+                    <img src="video13.jpg">
                     <div class="ui dimmer">
                       <div class="content">
                         <h2 class="ui inverted header">
                           3
                         </h2>
-                        Online Judges
+                        STL
                       </div>
                     </div>
                   </a>
                 </div>
                 <div class="four wide column">
                   <a href="" class="ui medium image"
-                      onclick="return runVideo('https://www.youtube.com/embed/7y6jB16zVl8','video4.jpg')">
-                    <img src="video4.jpg">
+                      onclick="return runVideo('https://www.youtube.com/embed/fd0Ebfa_mJ0','video14.jpg')">
+                    <img src="video14.jpg">
                     <div class="ui dimmer">
                       <div class="content">
                         <h2 class="ui inverted header">
                           4
                         </h2>
-                        Codeforces
+                        Thinking Techniques<br>Approaching<br>Problem Statement
                       </div>
                     </div>
                   </a>
                 </div>
               </div>
-              </div>
-              <!-- <h4 class="ui horizontal header divider">
-                <a href="#">Case Studies</a>
-              </h4> -->
-              <!-- <div class="teams" data-slick='{"slidesToShow": 1, "slidesToScroll": 3}'>
-                <div><img src="team1.jpg"></div>
-                <div><img src="team2.jpg"></div>
-                <div><img src="team3.jpg"></div>
-              </div>
-              <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
-              <p>Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
-              <a class="ui large button">I'm Still Quite Interested</a> -->
-            </div>
-          </div>
-        
-          <div class="ui grey inverted vertical center aligned segment">
-            <div class="ui container" style="padding-top: 40px;padding-bottom: 40px">
               <div class="row">
-                <h1 class="ui center aligned inverted header" style="padding-bottom: 30px">Participated Teams From FCIH</h3>
-              </div>
-              <div class="row">
-              <div class="fourteen wide column">
-                <div class="teams" data-slick='{"slidesToShow": 2, "slidesToScroll": 6}'>
-                  <div><img src="team1.jpg" width="500"></div>
-                  <div><img src="team2.jpg" width="500"></div>
-                  <div><img src="team3.jpg" width="500"></div>
+                <div class="four wide column">
+                  <a href="" class="ui medium image"
+                      onclick="return runVideo('https://www.youtube.com/embed/olcmPKZNqnM','video15.jpg')">
+                    <img src="video15.jpg">
+                    <div class="ui dimmer">
+                      <div class="content">
+                        <h2 class="ui inverted header">
+                          5
+                        </h2>
+                        Thinking Techniques<br>On papers<br>Not on PC
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="four wide column">
+                  <a href="" class="ui medium image"
+                      onclick="return runVideo('https://www.youtube.com/embed/1ArHifjTuFc','video16.jpg')">
+                    <img src="video16.jpg">
+                    <div class="ui dimmer">
+                      <div class="content">
+                        <h2 class="ui inverted header">
+                          6
+                        </h2>
+                        Training Style<br>The Discipline-<br>Monitor Approach
+                      </div>
+                    </div>
+                  </a>
                 </div>
               </div>
               </div>
@@ -401,19 +464,6 @@
                     <a href="https://icpc.baylor.edu/" class="item">ACM ICPC Site</a>
                   </div>
                 </div>
-                <!-- <div class="three wide column">
-                  <h4 class="ui inverted header">Services</h4>
-                  <div class="ui inverted link list">
-                    <a href="#" class="item">Banana Pre-Order</a>
-                    <a href="#" class="item">DNA FAQ</a>
-                    <a href="#" class="item">How To Access</a>
-                    <a href="#" class="item">Favorite X-Men</a>
-                  </div>
-                </div>
-                <div class="seven wide column">
-                  <h4 class="ui inverted header">Footer Header</h4>
-                  <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
-                </div> -->
               </div>
             </div>
           </div>
@@ -428,7 +478,6 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script type="text/javascript">
     
   $(document)
@@ -458,33 +507,6 @@
         .dimmer({
           on: 'hover'
         });
-
-      $('.teams').slick({
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 3
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
-
     });
 
   function runVideo(video,pic) {
@@ -497,20 +519,28 @@
   }
 
   function first() {
-    runVideo('https://www.youtube.com/embed/TngPtAFRcbE','video1.jpg');
+    runVideo('https://www.youtube.com/embed/DL2osIDogXY','video11.jpg');
 
     return false;
   }
 
-  var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/16cDoZWfC9Vck6hhVb8OG7Xu54xkoanJRWCjHUlS4HiM/edit#gid=513835448';
+  var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/16cDoZWfC9Vck6hhVb8OG7Xu54xkoanJRWCjHUlS4HiM/edit#gid=633625547';
 
-  var columns = ['Name','Score','D','E','F','G','H','I','J','K','L','M','Profile_Picture'];
-  var columnsNames = ['Name','Score','A','B','C','D','E','F','G','H','I','J'];
+  // var columns = ['Name','Score','D','E','F','G','H','I','J','K','Profile_Picture'];
+  var columnsNames = ['Name','Score','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','Profile_Picture'];
+  var columnsNames1 = ['Name','Q','R','S','T','U','V','W','X','Y','Z','AA','AB','AC','AD','AE','AF','AG','AH','AI','AJ','AK','AL','AM','AN','AO'];
+
+
 
   var template = Handlebars.compile(document.getElementById("header-row-script").innerHTML)
-  var context = {columns: columnsNames};
+  var context = {columns: columnsNames.slice(0,-1)};
   var html = template(context);
   document.getElementById("header-row").innerHTML = html;
+
+  var template = Handlebars.compile(document.getElementById("header-row-script2").innerHTML)
+  var context = {columns: columnsNames1.slice(1)};
+  var html = template(context);
+  document.getElementById("header-row2").innerHTML = html;
   
   Handlebars.registerHelper('isHeader', function(cells) {
       return cells.Name == 'Name' || cells.Name == 'ACM ICPC';
@@ -527,27 +557,56 @@
     return cells;
   });
 
-  Handlebars.registerHelper('columns', function() {
-    return columns;
+  Handlebars.registerHelper('numberedBackgroundColor', function(text) {
+    if (!isNaN(text)) {
+      num = parseFloat(text);
+      if (num > 199.99) return 'green';
+      if (num >= 160 && num < 200) return '#b0c4de';
+      if (num >= 110 && num < 160) return '#eedd82';
+      if (num < 110) return 'red';
+    }
+
+    return 'white';
   });
 
+  // Handlebars.registerHelper('columns', function() {
+  //   return columnsNames;
+  // });
+
+  // Handlebars.registerHelper('columns1', function() {
+  //   return columnsNames1;
+  // });
+
   var HRTemplate = Handlebars.compile($('#hr-template').html());
+  var HRTemplate2 = Handlebars.compile($('#hr-template2').html());
   var TopTemplate = Handlebars.compile($('#top-template').html());
+
+  var query = "select A,E,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,AU order by E desc"
+  var query1 = "select A,V,W,X,Y,Z,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS,AT order by E desc"
 
   $('#hr').sheetrock({
     url: mySpreadsheet,
-    query: "select A,C,D,E,F,G,H,I,J,K,L,M,N order by C desc",
+    query: query,
     fetchSize: 6,
-    labels: columns,
+    labels: columnsNames,
     rowTemplate: HRTemplate,
+    callback: draw
+  });
+
+  $('#hr2').sheetrock({
+    url: mySpreadsheet,
+    query: query1,
+    fetchSize: 6,
+    labels: columnsNames1,
+    rowTemplate: HRTemplate2,
     callback: draw
   });
 
   $('#top').sheetrock({
     url: mySpreadsheet,
-    query: "select A,C,D,E,F,G,H,I,J,K,L,M,N order by C desc",
+    query: query,
     fetchSize: 1,
-    labels: columns,
+    labels: columnsNames,
     rowTemplate: TopTemplate,
     callback: draw
   });
